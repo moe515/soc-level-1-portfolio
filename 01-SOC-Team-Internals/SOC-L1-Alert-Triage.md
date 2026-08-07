@@ -60,11 +60,3 @@ When facing a queue of alerts, the standard approach is:
 ## Personal Notes
 
 First hands-on room simulating a live SOC alert queue. Good introduction to the triage mindset, treat every alert methodically instead of jumping between them randomly.
-
-## Proof of Completion
-
-![Room completion screenshot](./proof/alert-triage-completion.png)
-
-![Final triaged alert dashboard](./proof/alert-triage-final-dashboard.png)
-
-Screenshots show the room's completion confirmation and the final triaged alert queue (all closed, verdicts assigned), no answers or flags are included, per TryHackMe's terms.
