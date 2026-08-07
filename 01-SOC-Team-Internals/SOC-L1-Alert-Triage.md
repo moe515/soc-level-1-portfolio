@@ -65,4 +65,6 @@ First hands-on room simulating a live SOC alert queue. Good introduction to the 
 
 ![Room completion screenshot](./proof/alert-triage-completion.png)
 
-Screenshot only shows the room's completion confirmation, no answers or flags are included, per TryHackMe's terms.
+![Final triaged alert dashboard](./proof/alert-triage-final-dashboard.png)
+
+Screenshots show the room's completion confirmation and the final triaged alert queue (all closed, verdicts assigned), no answers or flags are included, per TryHackMe's terms.
