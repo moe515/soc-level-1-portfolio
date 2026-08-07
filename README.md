@@ -36,8 +36,5 @@ Note: No direct answers, flags, or step-by-step solutions are published here, pe
 
 Every time I finish a room, I add:
 1. A folder under the matching module (create one if it's new).
-2. A markdown note copied from _ROOM_TEMPLATE.md, filled in with the concepts and skills learned.
-3. A proof screenshot of the room's completion screen (no flags, no answers).
-4. A new row in the Progress table above.
-
-This keeps every entry consistent and gives real, verifiable evidence of hands-on progress — not just a list of room names.
+2. A markdown note with Objective, Key Concepts, and Skills Gained, in my own words.
+3. A new row in the Progress table above.
