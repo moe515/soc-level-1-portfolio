@@ -11,6 +11,7 @@ Aspiring SOC Analyst building practical, hands-on skills in alert triage, log an
 | # | Module | Room | Status | Notes |
 |---|--------|------|--------|-------|
 | 1 | SOC Team Internals | [SOC L1 Alert Triage](./01-SOC-Team-Internals/SOC-L1-Alert-Triage.md) | Done | Alert lifecycle, triage workflow |
+| 2 | SOC Team Internals | [SOC L1 Alert Reporting](./01-SOC-Team-Internals/SOC-L1-Alert-Reporting.md) | Done | Five Ws reporting, escalation, SOC communication |
 
 ## Skills Covered So Far
 
@@ -18,6 +19,8 @@ Aspiring SOC Analyst building practical, hands-on skills in alert triage, log an
 - Alert management platforms (SIEM, EDR/NDR, SOAR, ITSM)
 - Alert properties and how to read them (severity, status, verdict, fields)
 - Alert prioritization strategy (filter, severity, time)
+- Alert reporting using the Five Ws (Who, What, When, Where, Why)
+- Escalation criteria and SOC crisis communication
 
 ## Repo Structure
 
