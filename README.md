@@ -12,6 +12,7 @@ Aspiring SOC Analyst building practical, hands-on skills in alert triage, log an
 |---|--------|------|--------|-------|
 | 1 | SOC Team Internals | [SOC L1 Alert Triage](./01-SOC-Team-Internals/SOC-L1-Alert-Triage.md) | Done | Alert lifecycle, triage workflow |
 | 2 | SOC Team Internals | [SOC L1 Alert Reporting](./01-SOC-Team-Internals/SOC-L1-Alert-Reporting.md) | Done | Five Ws reporting, escalation, SOC communication |
+| 3 | SOC Team Internals | [SOC Workbooks and Lookups](./01-SOC-Team-Internals/SOC-Workbooks-and-Lookups.md) | Done | Identity/asset inventories, network diagrams, workbook-driven triage |
 
 ## Skills Covered So Far
 
@@ -21,6 +22,9 @@ Aspiring SOC Analyst building practical, hands-on skills in alert triage, log an
 - Alert prioritization strategy (filter, severity, time)
 - Alert reporting using the Five Ws (Who, What, When, Where, Why)
 - Escalation criteria and SOC crisis communication
+- Identity and asset inventories for fast investigation context
+- Reading network diagrams to trace attack paths
+- Following structured SOC workbooks (Enrichment, Investigation, Escalation)
 
 ## Repo Structure
 
