@@ -54,3 +54,77 @@ Each detection view typically includes: a Summary, Process Info (the full proces
 ## Personal Notes
 
 This was the first room in the Core SOC Solutions module. The practical scenario had multiple linked detections across different hosts (a malicious Office document as initial access, credential dumping via LSASS memory access, and suspicious execution from AppData) - good practice at using the process chain and IOC tabs together to piece together a single attacker's path across an environment rather than treating each alert in isolation.
+
+## Practical Investigation — Portfolio-Safe Case Study
+
+> This section documents the investigation method and conclusions in my own words. It intentionally omits room answers, flags, and exact challenge values.
+
+### Detection A — Malicious Office Document
+
+**Observed chain:** Office application -> Windows command shell -> native download utility -> downloaded executable.
+
+**Evidence reviewed:**
+- An Office document spawned a command shell, which is unusual for normal document use.
+- The shell launched a native Windows download utility.
+- The downloaded executable was written to a public user directory.
+- EDR identified related network and file indicators and quarantined the payload.
+
+**Assessment:** High-confidence true positive. The combined process ancestry, download behavior, suspicious destination path, and EDR containment action are consistent with phishing-led initial access and payload delivery.
+
+### Detection B — Credential Dumping and Exfiltration Attempt
+
+**Observed chain:** User shell -> unsigned executable from a temporary directory -> LSASS memory access.
+
+**Evidence reviewed:**
+- The executable accessed the memory of `lsass.exe`.
+- It created a credential-dump artifact on disk.
+- Persistence-related registry changes were recorded.
+- The process attempted to upload the dump to an external file-transfer service.
+- EDR blocked the outbound activity and quarantined the executable.
+
+**Assessment:** Confirmed malicious credential-access activity. The strongest evidence is the combination of LSASS memory access, dump creation, persistence, and attempted exfiltration.
+
+### Detection C — AppData Execution
+
+**Observed chain:** User shell -> unsigned updater-like executable from a user profile directory.
+
+**Evidence reviewed:**
+- Execution from AppData and the lack of a digital signature initially raised suspicion.
+- The network destination was an internal private address.
+- Threat intelligence identified the program as a known internal IT utility.
+
+**Assessment:** Likely authorized administrative activity, but the alert should only be closed after validating the software owner, expected hash, deployment record, and business purpose. A benign label is context, not proof by itself.
+
+### MITRE ATT&CK Mapping
+
+| Observed behavior | ATT&CK technique |
+|---|---|
+| Command shell launched from a document | [T1059.003 — Windows Command Shell](https://attack.mitre.org/techniques/T1059/003/) |
+| Payload downloaded to the endpoint | [T1105 — Ingress Tool Transfer](https://attack.mitre.org/techniques/T1105/) |
+| LSASS memory accessed for credentials | [T1003.001 — LSASS Memory](https://attack.mitre.org/techniques/T1003/001/) |
+| Registry-based startup persistence | [T1547.001 — Registry Run Keys / Startup Folder](https://attack.mitre.org/techniques/T1547/001/) |
+| Dump uploaded to a file-sharing service | [T1567.002 — Exfiltration to Cloud Storage](https://attack.mitre.org/techniques/T1567/002/) |
+
+### Investigation Workflow Used
+
+1. Read the alert summary to identify the affected host, user, severity, and detection objective.
+2. Reconstruct the process tree from parent to child and inspect command lines.
+3. Review hashes, paths, domains, IPs, registry changes, and signer information.
+4. Check which indicators were blocked, logged, flagged, or quarantined.
+5. Correlate related detections across users, hosts, and timestamps.
+6. Decide the verdict from the complete behavior, not from one indicator.
+7. Identify containment and escalation requirements.
+
+### Analyst Takeaways
+
+- Process ancestry often provides more context than a file name alone.
+- An EDR response action shows what was contained; it does not replace analyst validation.
+- Unsigned execution from AppData is suspicious context, but it is not automatically malicious.
+- LSASS access plus dump creation and external transfer is a strong credential-theft signal.
+- Related alerts should be correlated across the environment before assigning final scope.
+
+## References
+
+- [Microsoft: Endpoint detection and response overview](https://learn.microsoft.com/en-us/defender-endpoint/overview-endpoint-detection-response)
+- [Microsoft: Take response actions on a device](https://learn.microsoft.com/en-us/defender-endpoint/respond-machine-alerts)
+- [MITRE ATT&CK Enterprise techniques](https://attack.mitre.org/techniques/enterprise/)
