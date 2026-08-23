@@ -15,6 +15,7 @@ Aspiring SOC Analyst building practical, hands-on skills in alert triage, log an
 | 3 | SOC Team Internals | [SOC Workbooks and Lookups](./01-SOC-Team-Internals/SOC-Workbooks-and-Lookups.md) | Done | Identity/asset inventories, network diagrams, workbook-driven triage |
 | 4 | SOC Team Internals | [SOC Metrics and Objectives](./01-SOC-Team-Internals/SOC-Metrics-and-Objectives.md) | Done | MTTD/MTTA/MTTR, False Positive/Escalation/Detection rates |
 | 5 | SOC Team Internals | [SOC Simulator: Introduction to Phishing](./01-SOC-Team-Internals/SOC-Simulator-Introduction-to-Phishing.md) | Done | End-to-end triage under time pressure, AI-reviewed reporting |
+| 6 | Core SOC Solutions | [Introduction to EDR](./02-Core-SOC-Solutions/Introduction-to-EDR.md) | Done | EDR vs antivirus, agent/console architecture, telemetry, detection and response capabilities |
 
 ## Skills Covered So Far
 
@@ -29,6 +30,10 @@ Aspiring SOC Analyst building practical, hands-on skills in alert triage, log an
 - Following structured SOC workbooks (Enrichment, Investigation, Escalation)
 - Core SOC metrics (AC, FPR, AER, TDR) and SLA timing metrics (MTTD, MTTA, MTTR)
 - Running a full triage workflow end-to-end under a simulated live shift
+- Differentiating EDR from traditional antivirus
+- Reading EDR telemetry and process chains to reconstruct an attack path
+- Recognizing EDR detection techniques (behavioral, anomaly, IOC, MITRE ATT&CK, ML)
+- Knowing EDR response actions (isolate, terminate, quarantine, remote access, artifact collection)
 
 ## Repo Structure
 
