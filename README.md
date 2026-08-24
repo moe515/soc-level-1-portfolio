@@ -17,6 +17,7 @@ Aspiring SOC Analyst building practical, hands-on skills in alert triage, log an
 | 5 | SOC Team Internals | [SOC Simulator: Introduction to Phishing](./01-SOC-Team-Internals/SOC-Simulator-Introduction-to-Phishing.md) | Done | End-to-end triage under time pressure, AI-reviewed reporting |
 | 6 | Core SOC Solutions | [Introduction to EDR](./02-Core-SOC-Solutions/Introduction-to-EDR.md) | Done | EDR vs antivirus, agent/console architecture, telemetry, detection and response capabilities |
 | 7 | Core SOC Solutions | [Introduction to SIEM](./02-Core-SOC-Solutions/Introduction-to-SIEM.md) | Done | Host vs network-centric logs, SIEM features, log ingestion, detection rules, alert investigation |
+| 8 | Core SOC Solutions | [Splunk: The Basics](./02-Core-SOC-Solutions/Splunk-The-Basics.md) | Done | Forwarder/Indexer/Search Head architecture, uploading data, SPL query basics |
 
 ## Skills Covered So Far
 
@@ -39,6 +40,9 @@ Aspiring SOC Analyst building practical, hands-on skills in alert triage, log an
 - Understanding core SIEM capabilities: collection, normalization, correlation, alerting, dashboards
 - Building/reading detection rules from log source, Event ID, and field conditions
 - Knowing common log ingestion methods (agent, syslog, manual upload, port forwarding)
+- Explaining Splunk's Forwarder / Indexer / Search Head architecture
+- Uploading and indexing raw log files into Splunk
+- Writing basic SPL queries (index scoping, spath, search filtering, stats aggregation)
 
 ## Repo Structure
 
