@@ -16,6 +16,7 @@ Aspiring SOC Analyst building practical, hands-on skills in alert triage, log an
 | 4 | SOC Team Internals | [SOC Metrics and Objectives](./01-SOC-Team-Internals/SOC-Metrics-and-Objectives.md) | Done | MTTD/MTTA/MTTR, False Positive/Escalation/Detection rates |
 | 5 | SOC Team Internals | [SOC Simulator: Introduction to Phishing](./01-SOC-Team-Internals/SOC-Simulator-Introduction-to-Phishing.md) | Done | End-to-end triage under time pressure, AI-reviewed reporting |
 | 6 | Core SOC Solutions | [Introduction to EDR](./02-Core-SOC-Solutions/Introduction-to-EDR.md) | Done | EDR vs antivirus, agent/console architecture, telemetry, detection and response capabilities |
+| 7 | Core SOC Solutions | [Introduction to SIEM](./02-Core-SOC-Solutions/Introduction-to-SIEM.md) | Done | Host vs network-centric logs, SIEM features, log ingestion, detection rules, alert investigation |
 
 ## Skills Covered So Far
 
@@ -34,6 +35,10 @@ Aspiring SOC Analyst building practical, hands-on skills in alert triage, log an
 - Reading EDR telemetry and process chains to reconstruct an attack path
 - Recognizing EDR detection techniques (behavioral, anomaly, IOC, MITRE ATT&CK, ML)
 - Knowing EDR response actions (isolate, terminate, quarantine, remote access, artifact collection)
+- Distinguishing host-centric vs. network-centric log sources
+- Understanding core SIEM capabilities: collection, normalization, correlation, alerting, dashboards
+- Building/reading detection rules from log source, Event ID, and field conditions
+- Knowing common log ingestion methods (agent, syslog, manual upload, port forwarding)
 
 ## Repo Structure
 
