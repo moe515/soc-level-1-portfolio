@@ -1,50 +1,121 @@
 # Splunk: The Basics
 
-**Path:** SOC Level 1 -> Core SOC Solutions
-**Room:** Splunk: The Basics (https://tryhackme.com/room/splunk101) - 30 min
+**Path:** SOC Level 1 -> Core SOC Solutions  
+**Room:** Splunk: The Basics  
 **Status:** Completed
 
 ## Objective
-Understand how Splunk (a leading SIEM solution) is structured, how logs get ingested into it, and how to search/analyze indexed data using SPL (Search Processing Language).
 
-## Key Concepts
+Understand how Splunk collects, processes, stores, and searches security telemetry, then apply basic SPL searches to investigate structured VPN logs.
 
-### 1. Splunk's Three Core Components
-- **Forwarder** - lightweight agent installed on the endpoint being monitored. Collects data (web traffic, Windows Event Logs/PowerShell/Sysmon data, Linux host-centric logs, database connection logs, etc.) and sends it to the Splunk instance. Minimal performance impact on the host.
-- **Indexer** - processes the data received from forwarders: parses and normalizes it into field-value pairs, categorizes it, and stores the results as searchable events.
-- **Search Head** - the interface (Search & Reporting app) where analysts query the indexed logs using SPL, and where results can be turned into presentable tables, charts, and visualizations.
+## Core Architecture
 
-### 2. Navigating Splunk
-- **Splunk Bar** (top panel) - system notifications/messages, Settings (instance configuration), Activity (search job/process progress), Help (docs/tutorials), Find (search across the app), and switching between installed apps.
-- **Apps Panel** - shows installed Splunk apps; Search & Reporting is the default.
-- **Explore Splunk** - quick links to add data, add new apps, and access documentation.
-- **Home Dashboard** - default view is empty; dashboards can be selected from a listing page or built and pinned here.
+| Component | Primary Role |
+|---|---|
+| **Forwarder** | Lightweight agent that collects endpoint or server data and sends it to Splunk. |
+| **Indexer** | Parses incoming data, creates searchable events, and stores it in indexes. |
+| **Search Head** | Analyst interface for running SPL searches, reviewing results, and building reports or dashboards. |
 
-### 3. Adding Data
-Splunk can ingest almost any data type - firewall logs, website logs, network events, cloud/security/virtualization/application sources, etc. Ingestion methods include:
-- **Upload** - upload files directly from a local machine (used in this room's lab for a VPN log file).
-- **Monitor** - watch a file/data stream on the local Splunk platform host in real time.
-- **Forward** - receive data forwarded from a remote Splunk Forwarder.
+Data flow:
 
-The upload workflow: select the log file and source type -> input settings (choose/create the index the data will be stored under, associate a host name) -> review configuration -> complete.
+`Log Source -> Forwarder -> Indexer -> Search Head -> Analyst`
 
-### 4. Search Processing Language (SPL) Basics
-Once data is indexed, it can be queried in the Search & Reporting app. Core patterns used:
-- `index="<name>"` - scope the search to a specific index.
-- `spath` - extract fields from structured data (e.g. JSON) so they can be searched/filtered on.
-- `search <field>="<value>"` - filter events by a field's value (supports `!=` for "not equal to").
-- `stats count` - aggregate/count matching events.
+## Navigating Splunk
 
-Example pattern: `index="vpn_logs" | spath | search UserName="<user>" | stats count` - narrows all VPN log events down to a specific user and returns how many matched.
+- **Splunk Bar:** messages, settings, search activity, help, and app navigation.
+- **Apps Panel:** lists installed applications; Search & Reporting is used for investigations.
+- **Explore Splunk:** provides shortcuts for adding data and accessing documentation.
+- **Dashboards:** present saved searches and visualizations for monitoring and analysis.
+
+## Adding Data
+
+Splunk supports multiple ingestion methods:
+
+| Method | Use Case |
+|---|---|
+| **Upload** | Import a local file for indexing and analysis. |
+| **Monitor** | Continuously watch local files, directories, or network ports. |
+| **Forward** | Receive data from a Splunk forwarder on another system. |
+
+The practical workflow was:
+
+1. Upload a newline-delimited JSON VPN log file.
+2. Confirm the detected JSON source type.
+3. Store the events in a dedicated index.
+4. Open Search & Reporting and set the time range appropriately.
+5. Validate ingestion before applying investigation filters.
+
+## SPL Fundamentals
+
+```spl
+index="<index_name>"
+| stats count
+```
+
+Counts all events available in the selected index.
+
+```spl
+index="<index_name>"
+| spath
+| search UserName="<user>"
+| stats count
+```
+
+Extracts JSON fields, filters by a username, and counts matching events.
+
+```spl
+index="<index_name>"
+| spath
+| search Source_ip="<ip_address>"
+| stats values(UserName) AS UserName count
+```
+
+Pivots from a source IP to the associated usernames and event count.
+
+```spl
+index="<index_name>"
+| spath
+| search Source_Country!="<country>"
+| stats count
+```
+
+Uses a negative field filter to count events not associated with a specified country.
+
+## Hands-On Exercise (Sanitized)
+
+I ingested structured VPN telemetry and used SPL to:
+
+- Verify the total number of indexed events.
+- Extract JSON key-value fields with `spath`.
+- Filter activity by username and source IP.
+- Pivot from an IP address to an associated user.
+- Exclude a geographic value with `!=`.
+- Aggregate investigation results with `stats count` and `values()`.
+- Troubleshoot searches by checking the index name and time picker.
+
+Raw room answers and flags are intentionally excluded from this public portfolio.
+
+## Investigation Takeaways
+
+- Start broad with the index, verify data exists, and narrow the search one condition at a time.
+- Confirm the time range before assuming that data is missing.
+- Structured data is useful only after the relevant fields are parsed or extracted.
+- IP, user, geography, host, and time are common SOC pivot points.
+- A count is a summary; analysts should still inspect representative raw events to understand context.
 
 ## Skills Gained
 
-- Explaining Splunk's Forwarder / Indexer / Search Head architecture
-- Navigating the Splunk interface (Splunk Bar, Apps Panel, dashboards)
-- Uploading and indexing a raw log file into Splunk
-- Writing basic SPL queries: index scoping, spath field extraction, search filtering, stats aggregation
-- Comfort reading real Splunk Search & Reporting output (event lists and statistics tables)
+- Explaining Splunk's Forwarder, Indexer, and Search Head architecture.
+- Uploading and indexing structured log data.
+- Navigating Search & Reporting.
+- Writing basic SPL pipelines.
+- Extracting JSON fields with `spath`.
+- Filtering and aggregating events for an investigation.
+- Using user, IP, and country fields as investigation pivots.
 
-## Personal Notes
+## References
 
-Third room in Core SOC Solutions, first hands-on time in an actual Splunk instance rather than a described dashboard. Uploading raw JSON VPN logs and then filtering them down field by field (by user, by source IP, by country) made the SIEM normalization/correlation concepts from the previous room concrete - could directly see how spath turns nested JSON into searchable fields.
+- [Splunk — About the search language](https://help.splunk.com/en/splunk-enterprise/search/search-manual/10.4/search-overview/about-the-search-language)
+- [Splunk — Upload data](https://help.splunk.com/en/splunk-enterprise/get-started/get-data-in/9.4/how-to-get-data-into-your-splunk-deployment/upload-data)
+- [Splunk — spath command](https://help.splunk.com/en?resourceId=Splunk_SearchReference_Spath)
+- [Splunk — stats command](https://help.splunk.com/en?resourceId=Splunk_SearchReference_Stats)
