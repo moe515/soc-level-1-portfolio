@@ -64,3 +64,66 @@ Once a rule triggers, the analyst reviews the dashboard, examines the underlying
 ## Personal Notes
 
 Second room in Core SOC Solutions. The lab tied everything together end to end: a triggered alert on a SIEM dashboard, tracing it back through the raw event log to identify the responsible user and process, matching it to the specific detection rule, and classifying the verdict before taking action. Good practical bridge between "SIEM theory" and the alert-triage skills from the SOC Team Internals module.
+
+
+## Practical Investigation — Crypto-Mining Detection
+
+> Portfolio-safe summary: exact challenge answers and the completion flag are intentionally omitted.
+
+### Scenario
+
+A SIEM dashboard generated a potential crypto-mining alert after a Windows process-creation event matched an existing detection rule. The purpose of the investigation was to trace the alert back to its source event, identify the affected user and asset, understand why the rule fired, assign a verdict, and choose an appropriate response.
+
+### Evidence Reviewed
+
+- **Data source:** Windows event logs
+- **Event category:** Process creation
+- **Event ID:** 4688
+- **Observed behavior:** A miner-like executable launched from a user's temporary directory on an HR workstation
+- **Rule logic:** The process-name field contained a crypto-mining keyword
+- **Context:** The process was unexpected for the host's business role and location
+
+### Analyst Assessment
+
+**Verdict: True Positive**
+
+The process name alone was the initial trigger, but the final assessment also considered the executable path and the affected system's role. An HR workstation has no expected business reason to execute mining software from a user-controlled temporary directory. The activity is consistent with unauthorized use of system resources.
+
+### Recommended Response
+
+1. Isolate the endpoint to prevent additional command-and-control or payload activity.
+2. Terminate and quarantine the suspicious process/file.
+3. Capture the SHA-256 hash and check threat-intelligence sources.
+4. Review the parent process, full command line, persistence locations, and scheduled tasks.
+5. Identify outbound connections to mining pools or related infrastructure.
+6. Hunt for the same hash, process name, path pattern, and network indicators across the environment.
+7. Determine the initial access vector and restore the endpoint from a trusted state if required.
+
+### MITRE ATT&CK Mapping
+
+- [T1496 — Compute Hijacking](https://attack.mitre.org/techniques/T1496/): adversaries abuse compromised resources to perform resource-intensive tasks such as cryptocurrency mining.
+- [T1059 — Command and Scripting Interpreter](https://attack.mitre.org/techniques/T1059/): applicable if investigation shows the miner was launched through a shell or script.
+- [T1547 — Boot or Logon Autostart Execution](https://attack.mitre.org/techniques/T1547/): applicable if persistence is established through an autostart mechanism.
+
+### Detection-Engineering Note
+
+A rule that only searches for the substring `miner` can generate false positives. A stronger production rule would enrich the process-name match with context such as:
+
+- execution from a user-writable directory;
+- unsigned or untrusted binary;
+- abnormal parent-child relationship;
+- sustained high CPU usage;
+- connection to a known mining pool;
+- execution on a host where mining software is not approved.
+
+### Investigation Workflow Practiced
+
+```text
+Alert → Triggering Event → User/Host → Rule Match → Context → Verdict → Response
+```
+
+## References
+
+- [Microsoft — Event 4688: A new process has been created](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4688)
+- [MITRE ATT&CK — T1496 Compute Hijacking](https://attack.mitre.org/techniques/T1496/)
+- [NIST SP 800-92 — Guide to Computer Security Log Management](https://csrc.nist.gov/pubs/sp/800/92/final)
