@@ -18,6 +18,7 @@ Aspiring SOC Analyst building practical, hands-on skills in alert triage, log an
 | 6 | Core SOC Solutions | [Introduction to EDR](./02-Core-SOC-Solutions/Introduction-to-EDR.md) | Done | EDR vs antivirus, agent/console architecture, telemetry, detection and response capabilities |
 | 7 | Core SOC Solutions | [Introduction to SIEM](./02-Core-SOC-Solutions/Introduction-to-SIEM.md) | Done | Host vs network-centric logs, SIEM features, log ingestion, detection rules, alert investigation |
 | 8 | Core SOC Solutions | [Splunk: The Basics](./02-Core-SOC-Solutions/Splunk-The-Basics.md) | Done | Forwarder/Indexer/Search Head architecture, uploading data, SPL query basics |
+| 9 | Core SOC Solutions | [Elastic Stack: The Basics](./02-Core-SOC-Solutions/Elastic-Stack-The-Basics.md) | Done | Elastic data flow, Kibana Discover, KQL filtering, Lens visualizations and dashboards |
 
 ## Skills Covered So Far
 
@@ -43,6 +44,11 @@ Aspiring SOC Analyst building practical, hands-on skills in alert triage, log an
 - Explaining Splunk's Forwarder / Indexer / Search Head architecture
 - Uploading and indexing raw log files into Splunk
 - Writing basic SPL queries (index scoping, spath, search filtering, stats aggregation)
+- Explaining the Beats/Elastic Agent, Logstash, Elasticsearch, and Kibana data flow
+- Investigating VPN telemetry in Kibana Discover with data views and time filters
+- Writing field-based KQL with AND, OR, NOT, parentheses, and wildcards
+- Correlating users, source IPs, geography, actions, and timestamps
+- Building and saving Kibana Lens visualizations and custom dashboards
 
 ## Repo Structure
 
