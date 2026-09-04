@@ -19,6 +19,7 @@ Aspiring SOC Analyst building practical, hands-on skills in alert triage, log an
 | 7 | Core SOC Solutions | [Introduction to SIEM](./02-Core-SOC-Solutions/Introduction-to-SIEM.md) | Done | Host vs network-centric logs, SIEM features, log ingestion, detection rules, alert investigation |
 | 8 | Core SOC Solutions | [Splunk: The Basics](./02-Core-SOC-Solutions/Splunk-The-Basics.md) | Done | Forwarder/Indexer/Search Head architecture, uploading data, SPL query basics |
 | 9 | Core SOC Solutions | [Elastic Stack: The Basics](./02-Core-SOC-Solutions/Elastic-Stack-The-Basics.md) | Done | Elastic data flow, Kibana Discover, KQL filtering, Lens visualizations and dashboards |
+| 10 | Core SOC Solutions | [Introduction to SOAR](./02-Core-SOC-Solutions/Introduction-to-SOAR.md) | Done | SOC automation challenges, orchestration, playbooks, and a threat-intelligence workflow |
 
 ## Skills Covered So Far
 
@@ -49,6 +50,11 @@ Aspiring SOC Analyst building practical, hands-on skills in alert triage, log an
 - Writing field-based KQL with AND, OR, NOT, parentheses, and wildcards
 - Correlating users, source IPs, geography, actions, and timestamps
 - Building and saving Kibana Lens visualizations and custom dashboards
+- Explaining SOAR orchestration, automation, and response functions
+- Designing phishing and vulnerability-management playbooks
+- Classifying workflow steps as automated vs. analyst-driven
+- Integrating SIEM, threat intelligence, EDR, firewall, IAM, and ticketing workflows
+- Applying human approval gates to high-impact response actions
 
 ## Repo Structure
 
