@@ -22,6 +22,7 @@ Aspiring SOC Analyst building practical, hands-on skills in alert triage, log an
 | 10 | Core SOC Solutions | [Introduction to SOAR](./02-Core-SOC-Solutions/Introduction-to-SOAR.md) | Done | SOC automation challenges, orchestration, playbooks, and a threat-intelligence workflow |
 | 11 | Cyber Defence Frameworks | [Pyramid of Pain](./03-Cyber-Defence-Frameworks/Pyramid-of-Pain.md) | Done | Indicator durability, host/network artifacts, tools, and ATT&CK-aligned TTPs |
 | 12 | Cyber Defence Frameworks | [Cyber Kill Chain](./03-Cyber-Defence-Frameworks/Cyber-Kill-Chain.md) | Done | Seven-stage intrusion model, attack-path reconstruction, detection and control mapping |
+| 13 | Cyber Defence Frameworks | [Unified Kill Chain](./03-Cyber-Defence-Frameworks/Unified-Kill-Chain.md) | Done | Threat modelling, 18-phase attack lifecycle, network propagation, and action on objectives |
 
 ## Skills Covered So Far
 
@@ -65,6 +66,9 @@ Aspiring SOC Analyst building practical, hands-on skills in alert triage, log an
 - Mapping email, endpoint, identity, DNS, proxy, firewall, and application evidence to an intrusion timeline
 - Identifying persistence, C2 beaconing, exfiltration, recovery inhibition, and impact behavior
 - Using the Kill Chain alongside MITRE ATT&CK for control-gap analysis and detection improvement
+- Applying the Unified Kill Chain across Initial Foothold, Network Propagation, and Action on Objectives
+- Mapping the 18 UKC phases to SOC telemetry, the CIA triad, and MITRE ATT&CK tactics
+- Distinguishing pivoting, lateral movement, collection, exfiltration, impact, and strategic objectives
 
 ## Repo Structure
 
