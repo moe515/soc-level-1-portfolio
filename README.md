@@ -19,7 +19,9 @@ Aspiring SOC Analyst building practical, hands-on skills in alert triage, log an
 | 7 | Core SOC Solutions | [Introduction to SIEM](./02-Core-SOC-Solutions/Introduction-to-SIEM.md) | Done | Host vs network-centric logs, SIEM features, log ingestion, detection rules, alert investigation |
 | 8 | Core SOC Solutions | [Splunk: The Basics](./02-Core-SOC-Solutions/Splunk-The-Basics.md) | Done | Forwarder/Indexer/Search Head architecture, uploading data, SPL query basics |
 | 9 | Core SOC Solutions | [Elastic Stack: The Basics](./02-Core-SOC-Solutions/Elastic-Stack-The-Basics.md) | Done | Elastic data flow, Kibana Discover, KQL filtering, Lens visualizations and dashboards |
-| 10 | Core SOC Solutions | [Introduction to SOAR](./02-Core-SOC-Solutions/Introduction-to-SOAR.md) | Done | SOC automation challenges, orchestration, playbooks, and a threat-intelligence workflow |\n| 11 | Cyber Defence Frameworks | [Pyramid of Pain](./03-Cyber-Defence-Frameworks/Pyramid-of-Pain.md) | Done | Indicator durability, host/network artifacts, tools, and ATT&CK-aligned TTPs |
+| 10 | Core SOC Solutions | [Introduction to SOAR](./02-Core-SOC-Solutions/Introduction-to-SOAR.md) | Done | SOC automation challenges, orchestration, playbooks, and a threat-intelligence workflow |
+| 11 | Cyber Defence Frameworks | [Pyramid of Pain](./03-Cyber-Defence-Frameworks/Pyramid-of-Pain.md) | Done | Indicator durability, host/network artifacts, tools, and ATT&CK-aligned TTPs |
+| 12 | Cyber Defence Frameworks | [Cyber Kill Chain](./03-Cyber-Defence-Frameworks/Cyber-Kill-Chain.md) | Done | Seven-stage intrusion model, attack-path reconstruction, detection and control mapping |
 
 ## Skills Covered So Far
 
@@ -54,7 +56,15 @@ Aspiring SOC Analyst building practical, hands-on skills in alert triage, log an
 - Designing phishing and vulnerability-management playbooks
 - Classifying workflow steps as automated vs. analyst-driven
 - Integrating SIEM, threat intelligence, EDR, firewall, IAM, and ticketing workflows
-- Applying human approval gates to high-impact response actions\n- Applying the Pyramid of Pain to prioritize durable detections\n- Pivoting from hashes, IPs, and domains to host/network artifacts and adversary behavior\n- Mapping TTP-focused behavioral detections to MITRE ATT&CK
+- Applying human approval gates to high-impact response actions
+- Applying the Pyramid of Pain to prioritize durable detections
+- Pivoting from hashes, IPs, and domains to host/network artifacts and adversary behavior
+- Mapping TTP-focused behavioral detections to MITRE ATT&CK
+
+- Applying the Cyber Kill Chain to reconstruct attack progression across seven stages
+- Mapping email, endpoint, identity, DNS, proxy, firewall, and application evidence to an intrusion timeline
+- Identifying persistence, C2 beaconing, exfiltration, recovery inhibition, and impact behavior
+- Using the Kill Chain alongside MITRE ATT&CK for control-gap analysis and detection improvement
 
 ## Repo Structure
 
