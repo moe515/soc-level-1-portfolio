@@ -23,6 +23,7 @@ Aspiring SOC Analyst building practical, hands-on skills in alert triage, log an
 | 11 | Cyber Defence Frameworks | [Pyramid of Pain](./03-Cyber-Defence-Frameworks/Pyramid-of-Pain.md) | Done | Indicator durability, host/network artifacts, tools, and ATT&CK-aligned TTPs |
 | 12 | Cyber Defence Frameworks | [Cyber Kill Chain](./03-Cyber-Defence-Frameworks/Cyber-Kill-Chain.md) | Done | Seven-stage intrusion model, attack-path reconstruction, detection and control mapping |
 | 13 | Cyber Defence Frameworks | [Unified Kill Chain](./03-Cyber-Defence-Frameworks/Unified-Kill-Chain.md) | Done | Threat modelling, 18-phase attack lifecycle, network propagation, and action on objectives |
+| 14 | Cyber Defence Frameworks | [MITRE ATT&CK](./03-Cyber-Defence-Frameworks/MITRE-ATTCK.md) | Done | ATT&CK structure, behavior mapping, Navigator, detection engineering, D3FEND, CAR, and adversary emulation |
 
 ## Skills Covered So Far
 
@@ -69,6 +70,11 @@ Aspiring SOC Analyst building practical, hands-on skills in alert triage, log an
 - Applying the Unified Kill Chain across Initial Foothold, Network Propagation, and Action on Objectives
 - Mapping the 18 UKC phases to SOC telemetry, the CIA triad, and MITRE ATT&CK tactics
 - Distinguishing pivoting, lateral movement, collection, exfiltration, impact, and strategic objectives
+- Navigating the MITRE ATT&CK Enterprise matrix and technique pages
+- Mapping observed adversary behavior to tactics, techniques, sub-techniques, and procedures
+- Using ATT&CK Navigator concepts for coverage visualization and defensive gap analysis
+- Connecting ATT&CK with CAR analytics, D3FEND countermeasures, and controlled adversary emulation
+- Differentiating ATT&CK, CALDERA, AADAPT, and ATLAS by operational use case
 
 ## Repo Structure
 
