@@ -25,6 +25,7 @@ Aspiring SOC Analyst building practical, hands-on skills in alert triage, log an
 | 13 | Cyber Defence Frameworks | [Unified Kill Chain](./03-Cyber-Defence-Frameworks/Unified-Kill-Chain.md) | Done | Threat modelling, 18-phase attack lifecycle, network propagation, and action on objectives |
 | 14 | Cyber Defence Frameworks | [MITRE ATT&CK](./03-Cyber-Defence-Frameworks/MITRE-ATTCK.md) | Done | ATT&CK structure, behavior mapping, Navigator, detection engineering, D3FEND, CAR, and adversary emulation |
 | 15 | Cyber Defence Frameworks | [Summit](./03-Cyber-Defence-Frameworks/Summit.md) | Done | Pyramid of Pain progression, sandbox analysis, IOC blocking, Sigma rules, beaconing, and TTP detection |
+| 16 | Cyber Defence Frameworks | [Eviction](./03-Cyber-Defence-Frameworks/Eviction.md) | Done | APT28 profiling, ATT&CK Navigator, TTP mapping, telemetry planning, and detection opportunities |
 
 ## Skills Covered So Far
 
@@ -82,6 +83,10 @@ Aspiring SOC Analyst building practical, hands-on skills in alert triage, log an
 - Detecting registry-based Defender tampering
 - Detecting periodic C2 beaconing from Sysmon network events
 - Building TTP-focused collection and staging detections
+- Using ATT&CK Navigator for adversary-centric analysis and coverage review
+- Mapping APT28 behavior across reconnaissance, execution, persistence, lateral movement, collection, and C2
+- Translating threat intelligence into endpoint, identity, email, network, and cloud telemetry requirements
+- Identifying detection opportunities for PowerShell, registry persistence, Rundll32, SMB, SharePoint, and proxy-based C2
 
 ## Repo Structure
 
