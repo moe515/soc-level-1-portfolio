@@ -24,6 +24,7 @@ Aspiring SOC Analyst building practical, hands-on skills in alert triage, log an
 | 12 | Cyber Defence Frameworks | [Cyber Kill Chain](./03-Cyber-Defence-Frameworks/Cyber-Kill-Chain.md) | Done | Seven-stage intrusion model, attack-path reconstruction, detection and control mapping |
 | 13 | Cyber Defence Frameworks | [Unified Kill Chain](./03-Cyber-Defence-Frameworks/Unified-Kill-Chain.md) | Done | Threat modelling, 18-phase attack lifecycle, network propagation, and action on objectives |
 | 14 | Cyber Defence Frameworks | [MITRE ATT&CK](./03-Cyber-Defence-Frameworks/MITRE-ATTCK.md) | Done | ATT&CK structure, behavior mapping, Navigator, detection engineering, D3FEND, CAR, and adversary emulation |
+| 15 | Cyber Defence Frameworks | [Summit](./03-Cyber-Defence-Frameworks/Summit.md) | Done | Pyramid of Pain progression, sandbox analysis, IOC blocking, Sigma rules, beaconing, and TTP detection |
 
 ## Skills Covered So Far
 
@@ -75,6 +76,12 @@ Aspiring SOC Analyst building practical, hands-on skills in alert triage, log an
 - Using ATT&CK Navigator concepts for coverage visualization and defensive gap analysis
 - Connecting ATT&CK with CAR analytics, D3FEND countermeasures, and controlled adversary emulation
 - Differentiating ATT&CK, CALDERA, AADAPT, and ATLAS by operational use case
+- Applying the Pyramid of Pain end-to-end from hashes to TTPs
+- Analyzing malware sandbox host and network artifacts
+- Creating hash, firewall, DNS, and Sigma detections
+- Detecting registry-based Defender tampering
+- Detecting periodic C2 beaconing from Sysmon network events
+- Building TTP-focused collection and staging detections
 
 ## Repo Structure
 
