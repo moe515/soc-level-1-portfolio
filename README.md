@@ -26,6 +26,7 @@ Aspiring SOC Analyst building practical, hands-on skills in alert triage, log an
 | 14 | Cyber Defence Frameworks | [MITRE ATT&CK](./03-Cyber-Defence-Frameworks/MITRE-ATTCK.md) | Done | ATT&CK structure, behavior mapping, Navigator, detection engineering, D3FEND, CAR, and adversary emulation |
 | 15 | Cyber Defence Frameworks | [Summit](./03-Cyber-Defence-Frameworks/Summit.md) | Done | Pyramid of Pain progression, sandbox analysis, IOC blocking, Sigma rules, beaconing, and TTP detection |
 | 16 | Cyber Defence Frameworks | [Eviction](./03-Cyber-Defence-Frameworks/Eviction.md) | Done | APT28 profiling, ATT&CK Navigator, TTP mapping, telemetry planning, and detection opportunities |
+| 17 | Phishing Analysis | [Phishing Analysis Fundamentals](./04-Phishing-Analysis/Phishing-Analysis-Fundamentals.md) | Done | Email anatomy, delivery protocols, header analysis, MIME/Base64 attachments, phishing indicators, and BEC |
 
 ## Skills Covered So Far
 
@@ -87,6 +88,14 @@ Aspiring SOC Analyst building practical, hands-on skills in alert triage, log an
 - Mapping APT28 behavior across reconnaissance, execution, persistence, lateral movement, collection, and C2
 - Translating threat intelligence into endpoint, identity, email, network, and cloud telemetry requirements
 - Identifying detection opportunities for PowerShell, registry persistence, Rundll32, SMB, SharePoint, and proxy-based C2
+
+- Tracing email delivery through SMTP, DNS, POP3, and IMAP
+- Inspecting raw email headers, Received chains, and originating IP information
+- Interpreting SPF, DKIM, and DMARC results without treating authentication as proof of legitimacy
+- Analyzing HTML email bodies, hidden hyperlinks, remote content, and MIME structure
+- Reconstructing Base64-encoded email attachments for controlled analysis
+- Defanging suspicious URLs, domains, email addresses, and IP addresses
+- Recognizing phishing, spear phishing, whaling, smishing, vishing, and Business Email Compromise
 
 ## Repo Structure
 
