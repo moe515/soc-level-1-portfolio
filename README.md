@@ -27,6 +27,7 @@ Aspiring SOC Analyst building practical, hands-on skills in alert triage, log an
 | 15 | Cyber Defence Frameworks | [Summit](./03-Cyber-Defence-Frameworks/Summit.md) | Done | Pyramid of Pain progression, sandbox analysis, IOC blocking, Sigma rules, beaconing, and TTP detection |
 | 16 | Cyber Defence Frameworks | [Eviction](./03-Cyber-Defence-Frameworks/Eviction.md) | Done | APT28 profiling, ATT&CK Navigator, TTP mapping, telemetry planning, and detection opportunities |
 | 17 | Phishing Analysis | [Phishing Analysis Fundamentals](./04-Phishing-Analysis/Phishing-Analysis-Fundamentals.md) | Done | Email anatomy, delivery protocols, header analysis, MIME/Base64 attachments, phishing indicators, and BEC |
+| 18 | Phishing Analysis | [Phishing Emails in Action](./04-Phishing-Analysis/Phishing-Emails-in-Action.md) | Done | Practical phishing triage, link/redirect analysis, tracking pixels, credential harvesting, and malicious attachment chains |
 
 ## Skills Covered So Far
 
@@ -96,6 +97,11 @@ Aspiring SOC Analyst building practical, hands-on skills in alert triage, log an
 - Reconstructing Base64-encoded email attachments for controlled analysis
 - Defanging suspicious URLs, domains, email addresses, and IP addresses
 - Recognizing phishing, spear phishing, whaling, smishing, vishing, and Business Email Compromise
+- Triaging real-world-style phishing lures across payment, parcel, cloud-sharing, streaming, app-store, and courier themes
+- Detecting display-name spoofing, BCC-based bulk delivery, tracking pixels, shortened URLs, and multi-stage redirects
+- Distinguishing credential-harvesting portals from legitimate cloud login workflows
+- Analyzing PDF, Word template, and Excel attachment-based delivery chains without execution
+- Mapping phishing activity to MITRE ATT&CK T1566, T1056.003, T1204.002, and T1105
 
 ## Repo Structure
 
