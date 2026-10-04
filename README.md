@@ -29,3 +29,4 @@ Aspiring SOC Analyst building practical, hands-on skills in alert triage, log an
 | 17 | Phishing Analysis | [Phishing Analysis Fundamentals](./04-Phishing-Analysis/Phishing-Analysis-Fundamentals.md) | Done | Email anatomy, delivery protocols, header analysis, MIME/Base64 attachments, phishing indicators, and BEC |
 | 18 | Phishing Analysis | [Phishing Emails in Action](./04-Phishing-Analysis/Phishing-Emails-in-Action.md) | Done | Practical phishing triage, link/redirect analysis, tracking pixels, credential harvesting, and malicious attachment chains |
 | 19 | Phishing Analysis | [Phishing Analysis Tools](./04-Phishing-Analysis/Phishing-Analysis-Tools.md) | Done | Header/body tooling, reputation checks, PhishTool, sandbox analysis, and document-based exploitation |
+| 20 | Phishing Analysis | [Phishing Prevention](./04-Phishing-Analysis/Phishing-Prevention.md) | Done | SPF/DKIM/DMARC, S/MIME, SMTP and MIME analysis, layered anti-phishing controls, and sandboxing |
